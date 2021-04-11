@@ -1,13 +1,13 @@
 {
-  "name": "discord-ticket",
+  "name": "discord-ticket-tool",
   "version": "1.0.0",
-  "description": "",
+  "description": "asdf",
   "main": "index.js",
   "scripts": {
     "start": "node ."
   },
   "keywords": [],
-  "author": "",
+  "author": "sujang",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^12.5.3"
