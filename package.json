@@ -1,7 +1,7 @@
 {
   "name": "discord-ticket-tool",
   "version": "1.0.0",
-  "description": "asdf",
+  "description": "discord easy ticket tool",
   "main": "index.js",
   "scripts": {
     "start": "node ."
@@ -10,7 +10,6 @@
   "author": "sujang",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^14.14.37",
     "discord.js": "^12.5.3"
   },
   "type": "module"

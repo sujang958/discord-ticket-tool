@@ -14,4 +14,4 @@ client.on('message', async message => {
     }
 });
 
-client.login('NzQwMTAwMjEyNDMyODMwNDg1.XykGCQ.8hIduV6ka2Hpq4osQHHBS1qOBAg')
+client.login()
