@@ -2,7 +2,7 @@ import ticket from './src/index.js';
 import { Client } from 'discord.js';
 
 const client = new Client();
-client.ticket = new ticket()
+client.ticket = new ticket();
 
 client.on('ready', () => {
     console.log('ready');
@@ -14,4 +14,4 @@ client.on('message', async message => {
     }
 });
 
-client.login()
+client.login('NzQwMTAwMjEyNDMyODMwNDg1.XykGCQ.8hIduV6ka2Hpq4osQHHBS1qOBAg')
