@@ -11,6 +11,8 @@ client.on('ready', () => {
 client.on('message', async message => {
     if (message.content.startsWith("!set")) {
         client.ticket.setTicketChannel(message.guild.channels.cache.get('793308826635599874'), 'asdf', 'asdf');
+    } else {
+        client.ticket
     }
 });
 
