@@ -1,4 +1,4 @@
-import ticket from './src/index.js';
+import ticket from './index';
 import { Client } from 'discord.js';
 
 const client = new Client();
