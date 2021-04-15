@@ -1,6 +1,6 @@
 {
   "name": "discord-ticket-tool",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "discord easy ticket tool",
   "main": "index.js",
   "scripts": {
