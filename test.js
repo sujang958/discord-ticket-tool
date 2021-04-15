@@ -1,4 +1,4 @@
-import ticket from './index';
+import ticket from './index.js';
 import { Client } from 'discord.js';
 
 const client = new Client();
@@ -12,8 +12,12 @@ client.on('message', async message => {
     if (message.content.startsWith("!set")) {
         client.ticket.setTicketChannel(message.guild.channels.cache.get('793308826635599874'), 'asdf', 'asdf');
     } else {
-        client.ticket
+        
     }
 });
 
-client.login()
+client.ticket.on('create', channel => {
+    console.log(channel);
+});
+
+client.login('NzQwMTAwMjEyNDMyODMwNDg1.XykGCQ.rS0nCNyJHDAPvYTe47HhB8sIBt0')
