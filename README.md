@@ -16,7 +16,7 @@ client.ticket = new Ticket();
 // ...
 client.ticket.setTicketChannel(discordjs guild, "Embed Title", "Description", "emoji(optional)", "color(optional)");
 // ...
-client.ticket.on("create", () => {
+client.ticket.on("create", (channel, user) => {
     console.log("Ticket Created!");
 });
 ```

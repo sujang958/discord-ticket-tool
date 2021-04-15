@@ -66,7 +66,7 @@ class Ticket {
             let ticketMsg = await ticketChannel.send(new Discord.MessageEmbed().setColor("RED").setAuthor("Ticket started").setDescription("React the emoji to close the ticket"))
             ticketMsg.react(`❌`);
 
-            this.emit("create", [ticketChannel]);
+            this.emit("create", ticketChannel, user);
 
             const ReactFilter = (reaction, user) => reaction.emoji.name == "❌";
             const collector = ticketMsg.createReactionCollector(ReactFilter);

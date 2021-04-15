@@ -16,8 +16,8 @@ client.on('message', async message => {
     }
 });
 
-client.ticket.on('create', channel => {
-    console.log(channel);
+client.ticket.on('create', (channel, user) => {
+    console.log(channel, user);
 });
 
-client.login('NzQwMTAwMjEyNDMyODMwNDg1.XykGCQ.rS0nCNyJHDAPvYTe47HhB8sIBt0')
+client.login('')
