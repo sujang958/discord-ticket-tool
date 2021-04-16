@@ -1,49 +1,27 @@
-export declare module 'discord-ticket-tool' {
-    import Discord from 'discord.js';
-    import { EventEmitter } from "events";
-
-    declare class Ticket {
-        public emit: (event: string | symbol, ...args: any[]) => boolean;
-        public on: (event: string | symbol, listener: (...args: any[]) => void) => EventEmitter;
-        public once: (event: string | symbol, listener: (...args: any[]) => void) => EventEmitter;
-        public setTicketChannel(channel: Discord.GuildChannel, title: string, description: string, emoji?: string, color?: Discord.ColorResolvable): Promise<void>;
-        public createTicketChannel(guild: Discord.Guild, user: Discord.User): Promise<void>;
-        public closeTicket(channel: Discord.GuildChannel): void;
-    }
-    export default Ticket;
+export interface embedOpt {
+    title: string,
+    description: string,
+    emoji: string,
+    color: Discord.ColorResolvable,
 }
 
-export type Colors =
-    | 'DEFAULT'
-    | 'WHITE'
-    | 'AQUA'
-    | 'GREEN'
-    | 'BLUE'
-    | 'YELLOW'
-    | 'PURPLE'
-    | 'LUMINOUS_VIVID_PINK'
-    | 'GOLD'
-    | 'ORANGE'
-    | 'RED'
-    | 'GREY'
-    | 'DARKER_GREY'
-    | 'NAVY'
-    | 'DARK_AQUA'
-    | 'DARK_GREEN'
-    | 'DARK_BLUE'
-    | 'DARK_PURPLE'
-    | 'DARK_VIVID_PINK'
-    | 'DARK_GOLD'
-    | 'DARK_ORANGE'
-    | 'DARK_RED'
-    | 'DARK_GREY'
-    | 'LIGHT_GREY'
-    | 'DARK_NAVY'
-    | 'BLURPLE'
-    | 'GREYPLE'
-    | 'DARK_BUT_NOT_BLACK'
-    | 'NOT_QUITE_BLACK'
-    | 'RANDOM'
-    | [number, number, number]
-    | number
-    | string;
+declare module 'discord-ticket-tool' {
+    import Discord from 'discord.js';
+    import { EventEmitter } from 'events';
+
+    interface Ticket {
+        emit(event: string | symbol, ...args: any[]): boolean;
+
+        on(event: 'close', listener: () => void): void;
+        on(event: 'create', listener: (channel: Discord.GuildChannel, user: Discord.User) => any): void;
+
+        once(event: string | symbol, listener: (...args: any[]) => void): void;
+        once(event: string | symbol, listener: (channel: Discord.GuildChannel, user: Discord.User) => void): void;
+
+        setTicketChannel(channel: Discord.GuildChannel, embedOpt: embedOpt): Promise<void>;
+        createTicketChannel(guild: Discord.Guild, user: Discord.User): Promise<void>;
+        closeTicket(channel: Discord.GuildChannel): void;
+    }
+
+    export = Ticket;
+}

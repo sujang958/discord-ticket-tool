@@ -14,7 +14,12 @@ $ yarn add discord-ticket-tool
 const Ticket = require("discord-ticket-tool").default;
 client.ticket = new Ticket();
 // ...
-client.ticket.setTicketChannel(discordjs guild, "Embed Title", "Description", "emoji(optional)", "color(optional)");
+ticket.setTicketChannel(message.guild.channels.cache.get('793308826635599874'), {
+    title: "asdf",
+    description: "asdf",
+    emoji: "❤(option)",
+    color: "GREEN(option)",
+});
 // ...
 client.ticket.on("create", (channel, user) => {
     console.log("Ticket Created!");

@@ -1,8 +1,8 @@
-import ticket from './index.js';
 import { Client } from 'discord.js';
+import Ticket from './src/index.js';
 
 const client = new Client();
-client.ticket = new ticket();
+const ticket = new Ticket();
 
 client.on('ready', () => {
     console.log('ready');
@@ -10,7 +10,11 @@ client.on('ready', () => {
 
 client.on('message', async message => {
     if (message.content.startsWith("!set")) {
-        client.ticket.setTicketChannel(message.guild.channels.cache.get('793308826635599874'), 'asdf', 'asdf');
+        ticket.setTicketChannel(message.guild.channels.cache.get('793308826635599874'), {
+            title: "asdf",
+            description: "asdf",
+            emoji: "❤"
+        });
     } else {
         
     }

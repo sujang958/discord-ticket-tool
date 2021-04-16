@@ -17,19 +17,18 @@ class Ticket {
     /**
      * set ticket channel
      * @param {Discord.GuildChannel} channel 
-     * @param {String} title 
-     * @param {String} description 
+     * @param {import('../typings/index').embedOpt} embedOpt
      */
-    async setTicketChannel(channel, title, description, emoji="✉", color="GREEN") {
+    async setTicketChannel(channel, embedOpt={title, color="GREEN", description, emoji="✉"}) {
         if (!channel.isText()) {
             throw new Error("[Discord ticket] ticket channel can not be voice channel");
         } else {
             let embed = new Discord.MessageEmbed();
-            embed.setTitle(title);
-            embed.setDescription(description);
-            embed.setColor(color);
+            embed.setTitle(embedOpt.title);
+            embed.setDescription(embedOpt.description);
+            embed.setColor(embedOpt.color);
             let ticketMsg = await channel.send(embed)
-            ticketMsg.react(emoji);
+            ticketMsg.react(embedOpt.emoji);
             
             const ReactFilter = (reaction, user) => reaction.emoji.name == emoji;
             const collector = ticketMsg.createReactionCollector(ReactFilter);
