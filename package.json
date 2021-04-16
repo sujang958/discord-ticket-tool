@@ -1,16 +1,28 @@
 {
   "name": "discord-ticket-tool",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "discord easy ticket tool",
   "main": "index.js",
   "scripts": {
     "start": "node ."
   },
-  "keywords": [],
+  "keywords": [
+    "discord",
+    "discord.js",
+    "ticket"
+  ],
   "author": "sujang",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^12.5.3"
   },
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujang958/discord-ticket-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sujang958/discord-ticket-tool/issues"
+  },
+  "homepage": "https://github.com/sujang958/discord-ticket-tool#readme"
 }
