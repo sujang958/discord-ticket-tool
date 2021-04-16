@@ -74,7 +74,7 @@ class Ticket {
             collector.on("collect", async r => {
                 if (r.count == 1)   return;
                 r.users.remove(r.users.cache.last().id);
-                this.closeTicket(r.message.channel);
+                this.closeTicket(r.message.channel, r.users.cache.last());
             });
         }  
     }
@@ -84,9 +84,9 @@ class Ticket {
      * @type {VoidFunction}
      * @param {Discord.GuildChannel} channel 
      */
-    async closeTicket(channel) {
+    async closeTicket(channel, user) {
         channel.delete("ticket closed");
-        this.emit("close");
+        this.emit("close", user);
     }
 }
 
