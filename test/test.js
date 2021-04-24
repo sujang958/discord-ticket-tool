@@ -1,7 +1,7 @@
-import { Client } from 'discord.js';
-import Ticket from './src/index.js';
+import * as Discord from 'discord.js';
+import Ticket from '../index';
 
-const client = new Client();
+const client = new Discord.Client();
 const ticket = new Ticket();
 
 client.on('ready', () => {
@@ -24,4 +24,4 @@ client.ticket.on('create', (channel, user) => {
     console.log(channel, user);
 });
 
-client.login('')
+client.login()
