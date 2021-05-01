@@ -1,5 +1,5 @@
-import Discord from "discord.js";
-import { EventEmitter } from "events";
+const Discord = require("discord.js");
+const { EventEmitter } = require("events");
 
 class Ticket {
     /**
@@ -17,9 +17,9 @@ class Ticket {
     /**
      * set ticket channel
      * @param {Discord.GuildChannel} channel 
-     * @param {import('../typings/index').embedOpt} embedOpt
+     * @param {String} embedOpt
      */
-    async setTicketChannel(channel, embedOpt={title, color="GREEN", description, emoji="✉"}) {
+    async setTicketChannel(channel, embedOpt={title, color: "GREEN", description, emoji: "✉"}) {
         if (!channel.isText()) {
             throw new Error("[Discord ticket] ticket channel can not be voice channel");
         } else {
@@ -89,4 +89,4 @@ class Ticket {
     }
 }
 
-export default Ticket;
+module.exports = Ticket;
